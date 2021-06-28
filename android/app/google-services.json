@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "687474464536",
+    "project_id": "tskbank-286d6",
+    "storage_bucket": "tskbank-286d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687474464536:android:42e3e4c8a35ac78933b06d",
+        "android_client_info": {
+          "package_name": "com.example.tsf_bankapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687474464536-rls30c35m8iq7vsg7nkjrtin4lvdd29m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF_JtnNwTjqsO9zx0HjD0IhmkncghAy5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687474464536-rls30c35m8iq7vsg7nkjrtin4lvdd29m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

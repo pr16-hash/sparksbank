@@ -54,6 +54,7 @@ flutter:
     - lib/img/pfpbg1.jpg
     - lib/img/transferbg.jpg
     - lib/img/tbg.jpg
+    - lib/img/logo.png
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

@@ -25,8 +25,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        title: Text("The sparks bank"),
+         leading: Image.network('https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/7a2fb475367c63f3e9cfc8ee975dc892.png'),
         backgroundColor: Colors.pink[300],
+
       ),
       body:
     Container(
@@ -50,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                return ListView(
                  children: snapshot.data!.docs.map( (documents)
                  {
+                   //the balance of user stored in firebase
                    int b = documents['balance'];
                    return ListTile(
                        title: Column(
@@ -61,18 +64,21 @@ class HomeScreen extends StatelessWidget {
                                ),
                                child: Stack(
                                  children: <Widget>[
+                                   //the profile picture of the user
                                    Align(
                                        alignment: Alignment.topLeft,
                                        child: CircleAvatar(
                                          backgroundImage: NetworkImage('https://image.shutterstock.com/image-photo/headshot-portrait-happy-ginger-girl-260nw-623804987.jpg'),
                                          radius: 50,)
                                    ),
+                                   //greeting user
                                    Align(
                                      alignment: Alignment.topRight + Alignment(-0.6,0.2),
                                      child: Text('Welcome back,',
                                        style: TextStyle(color: Colors.black, fontSize: 28, ),),
 
                                    ),
+                                   //name of user
                                    Align(
                                      alignment: Alignment.topLeft + Alignment(1.03,0.9),
                                      child: Text('Preeti Rawat',
@@ -108,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                                  Padding(
                                    padding: EdgeInsets.only(top: 30,right: 7.5),
                                    child:
-
+                                       //navigate to customer list
                                    TextButton.icon(
                                        onPressed: () {
                                          Navigator.push(
@@ -138,6 +144,7 @@ class HomeScreen extends StatelessWidget {
 
                                    ),
                                  ),
+                                 //navigate to transaction list
                                  Padding(
                                    padding: EdgeInsets.only(top: 30,left: 7.5),
                                    child: TextButton.icon(
@@ -173,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                                title: Column(
                                  children: <Widget>[
 
-
+                                   //navigation to directly transfer to user
                                    Padding(
                                      padding: EdgeInsets.only(top: 10,left: 0,right: 0),
                                      child: TextButton.icon(

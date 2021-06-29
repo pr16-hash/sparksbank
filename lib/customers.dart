@@ -185,72 +185,76 @@ class TTab extends StatefulWidget{
 
 class _TransferTab extends State<TTab>
 {
-int userbalance;
-int balance;
-String name;
+  int userbalance;
+  int balance;
+  String name;
   _TransferTab(this.balance,this.name,this.userbalance);
 
   TextEditingController valueofmoney = new TextEditingController();
 
   @override
 
-    Widget build(BuildContext context) {
-    return Scaffold(
-    appBar: AppBar(
-        title: Text("transfer"),
-        backgroundColor: Colors.pink[300],
-        ),
-    body:
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: new AssetImage('lib/img/tbg.jpg'),
-                fit: BoxFit.cover
+    Widget build(BuildContext context)
+  {
+      return Scaffold
+      (
+        appBar: AppBar(
+            title: Text("transfer"),
+            backgroundColor: Colors.pink[300],
             ),
-          ),
-          child: ListTile(
-
-            title: Column(
-                children: <Widget>[
-                  Align
-                    (
-                    alignment: Alignment.bottomCenter,
-                    child: TextField(
-                      controller: valueofmoney,
-                      keyboardType: TextInputType.number,
-
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Input amount you want to transfer to'
-                      ),
-                    ),
+        body:
+            Container
+            (
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: new AssetImage('lib/img/tbg.jpg'),
+                      fit: BoxFit.cover
                   ),
-                  Align
+                ),
+                child: ListTile
+                  (
+                    title: Column
                     (
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      child: Text('Give amount', style: TextStyle(fontSize: 20.0)),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue[200],
+                        children: <Widget>[
+                          Align
+                            (
+                            alignment: Alignment.bottomCenter,
+                            child: TextField(
+                              controller: valueofmoney,
+                              keyboardType: TextInputType.number,
 
-                      ),
-                      onPressed: ()
-                      {
-                        setState(() {
-                          calculate(balance,name,userbalance);
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CustomerTab(userbalance: userbalance,)));
-                        });
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  hintText: 'Input amount you want to transfer to'
+                              ),
+                            ),
+                          ),
+                          Align
+                            (
+                            alignment: Alignment.center,
+                            child: ElevatedButton(
+                              child: Text('Give amount', style: TextStyle(fontSize: 20.0)),
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blue[200],
 
-                      },
+                              ),
+                              onPressed: ()
+                              {
+                                setState(() {
+                                  calculate(balance,name,userbalance);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> CustomerTab(userbalance: userbalance,)));
+                                });
+
+                              },
+                            ),
+                          ),
+                        ]
                     ),
-                  ),
-                ]
+                ),
             ),
-          ),
-        ),
 
 
-    );
+      );
     }
 
  Future<void> transactiontable(int num,String name) async
@@ -260,7 +264,6 @@ String name;
    n.add({'amount':num,'name' :name,});
    return;
  }
-
 
   void calculate(balance,name,userbalance) {
   final enteredNumber = int.parse(valueofmoney.text);

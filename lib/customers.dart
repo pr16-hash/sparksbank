@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tsf_bankapp/main.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CP extends StatefulWidget{
-  // List<int> money = <int>[];
 
   final String name;
   final String birthday;
@@ -283,38 +281,3 @@ String name;
 
   }
 
-// class getuserbal extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return
-//       StreamBuilder<QuerySnapshot>( stream: FirebaseFirestore.instance.collection("users").snapshots(),
-//           builder: (BuildContext context, AsyncSnapshot <QuerySnapshot> snapshot){
-//             if(!snapshot.hasData)
-//             {
-//               return Center(
-//                 child: CircularProgressIndicator(),
-//               );
-//             }
-//
-//             return ListView(
-//               children: snapshot.data!.docs.map( (documents)
-//               {
-//                 return ListTile(
-//                   title: Text(documents['name']),
-//                   leading: new CircleAvatar(
-//                     backgroundImage: NetworkImage(documents['img']),
-//                   ),
-//                   onTap: ()
-//                   {
-//                     Navigator.push(context, MaterialPageRoute(builder: (context)=> TTab(balance:documents['balance'], name: documents['name'] )));
-//                   },
-//
-//                 );
-//
-//               }).toList(),
-//             );
-//           }
-//
-//
-//   }
-// }
